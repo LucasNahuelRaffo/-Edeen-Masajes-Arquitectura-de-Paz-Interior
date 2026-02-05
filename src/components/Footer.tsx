@@ -5,7 +5,7 @@ export function Footer() {
         {/* Footer Logo */}
         <div className="flex flex-col items-center mb-6">
           <img
-            src="/src/img/edeen-logo-official.png"
+            src="/edeen-logo-official.png"
             alt="Edeen Masajes Official Logo"
             className="w-40 h-auto object-contain brightness-0 invert opacity-40"
           />

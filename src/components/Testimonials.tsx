@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: 'Ana García',
     duration: '0:14',
-    audioUrl: '/src/img/Audio-1.ogg',
+    audioUrl: '/Audio-1.ogg',
     date: 'Hoy',
     rating: 5
   },

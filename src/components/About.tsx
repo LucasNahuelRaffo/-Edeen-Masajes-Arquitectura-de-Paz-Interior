@@ -154,7 +154,7 @@ export function About() {
             {/* Therapist 1 - Ana */}
             <div className="therapist-card grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               <div className="rounded-[2.5rem] overflow-hidden aspect-square border border-white/10 shadow-2xl order-1">
-                <img src="/src/img/therapist-ana.png" alt="Ana García" className="w-full h-full object-cover" />
+                <img src="/therapist-ana.png" alt="Ana García" className="w-full h-full object-cover" />
               </div>
               <div className="bg-white/5 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] border border-white/10 order-2">
                 <span className="text-amber-400 text-xs tracking-widest uppercase mb-3 block">Fisioterapeuta Sénior</span>
@@ -183,14 +183,14 @@ export function About() {
                 </div>
               </div>
               <div className="rounded-[2.5rem] overflow-hidden aspect-square border border-white/10 shadow-2xl order-1 lg:order-2">
-                <img src="/src/img/therapist-carlos.png" alt="Carlos Ruiz" className="w-full h-full object-cover" />
+                <img src="/therapist-carlos.png" alt="Carlos Ruiz" className="w-full h-full object-cover" />
               </div>
             </div>
 
             {/* Therapist 3 - Elena */}
             <div className="therapist-card grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               <div className="rounded-[2.5rem] overflow-hidden aspect-square border border-white/10 shadow-2xl order-1">
-                <img src="/src/img/therapist-elena.png" alt="Elena Woods" className="w-full h-full object-cover" />
+                <img src="/therapist-elena.png" alt="Elena Woods" className="w-full h-full object-cover" />
               </div>
               <div className="bg-white/5 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] border border-white/10 order-2 text-left">
                 <span className="text-amber-400 text-xs tracking-widest uppercase mb-3 block">Experta en Cuidado de la Piel</span>
@@ -217,7 +217,7 @@ export function About() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px] md:auto-rows-[300px]">
             {/* Tall Item */}
             <div className="gallery-item md:col-span-8 md:row-span-2 relative group rounded-[2rem] overflow-hidden border border-white/10">
-              <img src="/src/img/room-main.png" alt="Santuario Principal" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="/room-main.png" alt="Santuario Principal" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
                 <h4 className="text-2xl font-serif mb-2">Santuario Principal</h4>
