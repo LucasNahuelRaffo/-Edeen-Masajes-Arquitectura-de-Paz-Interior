@@ -151,57 +151,39 @@ export function About() {
           </h2>
 
           <div className="space-y-32">
-            {/* Therapist 1 - Ana */}
+            {/* Therapist 1 - Silvia */}
             <div className="therapist-card grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               <div className="rounded-[2.5rem] overflow-hidden aspect-square border border-white/10 shadow-2xl order-1">
-                <img src="/therapist-ana.png" alt="Ana García" className="w-full h-full object-cover" />
+                <img src="/therapist-ana.png" alt="Silvia - Directora" className="w-full h-full object-cover" />
               </div>
               <div className="bg-white/5 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] border border-white/10 order-2">
-                <span className="text-amber-400 text-xs tracking-widest uppercase mb-3 block">Fisioterapeuta Sénior</span>
-                <h3 className="text-3xl md:text-4xl font-serif mb-6">Ana García</h3>
+                <span className="text-amber-400 text-xs tracking-widest uppercase mb-3 block">Directora & Profesional Senior</span>
+                <h3 className="text-3xl md:text-4xl font-serif mb-6">Silvia</h3>
                 <p className="text-white/60 mb-8 leading-relaxed">
-                  Con más de 12 años de experiencia internacional, Ana ha perfeccionado una técnica única que combina lo mejor de la fisioterapia tradicional con elementos de relajación profunda. Su enfoque se centra en la liberación miofascial y la reconexión mente-cuerpo.
+                  Como alma y fundadora de Edeen, Silvia lidera el centro con una maestría forjada en años de práctica y estudio de las artes curativas. Su enfoque combina la precisión técnica con una sensibilidad intuitiva que permite una sanación profunda y personalizada para cada alma que cruza nuestra puerta.
                 </p>
                 <div className="flex gap-4">
-                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Tejido Profundo</span>
-                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Miofascial</span>
+                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Maestría Holística</span>
+                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Liderazgo Re-Evolutivo</span>
                 </div>
               </div>
             </div>
 
-            {/* Therapist 2 - Carlos - Reverse */}
+            {/* Therapist 2 - Vicky - Reverse */}
             <div className="therapist-card grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               <div className="bg-white/5 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] border border-white/10 order-2 lg:order-1">
-                <span className="text-amber-400 text-xs tracking-widest uppercase mb-3 block">Especialista en Masaje Oriental</span>
-                <h3 className="text-3xl md:text-4xl font-serif mb-6">Carlos Ruiz</h3>
+                <span className="text-amber-400 text-xs tracking-widest uppercase mb-3 block">Terapeuta Asociada</span>
+                <h3 className="text-3xl md:text-4xl font-serif mb-6">Vicky</h3>
                 <p className="text-white/60 mb-8 leading-relaxed">
-                  Apasionado de las terapias holísticas, Carlos integra en sus sesiones técnicas milenarias como el Shiatsu y el Tuina. Su objetivo es restaurar el flujo energético y aliviar la tensión acumulada por el estrés diario mediante un enfoque rítmico y equilibrado.
+                  Mano derecha de Silvia y pieza fundamental de Edeen. Vicky ha crecido profesionalmente bajo la mentoría de Silvia, desarrollando una técnica impecable y una conexión única con los clientes. Su dedicación y frescura aportan una energía vital esencial al equipo, manteniendo la excelencia que nos define.
                 </p>
                 <div className="flex gap-4">
-                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Shiatsu</span>
-                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Tuina</span>
+                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Sinergia curativa</span>
+                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Técnica Superior</span>
                 </div>
               </div>
               <div className="rounded-[2.5rem] overflow-hidden aspect-square border border-white/10 shadow-2xl order-1 lg:order-2">
-                <img src="/therapist-carlos.png" alt="Carlos Ruiz" className="w-full h-full object-cover" />
-              </div>
-            </div>
-
-            {/* Therapist 3 - Elena */}
-            <div className="therapist-card grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-              <div className="rounded-[2.5rem] overflow-hidden aspect-square border border-white/10 shadow-2xl order-1">
-                <img src="/therapist-elena.png" alt="Elena Woods" className="w-full h-full object-cover" />
-              </div>
-              <div className="bg-white/5 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] border border-white/10 order-2 text-left">
-                <span className="text-amber-400 text-xs tracking-widest uppercase mb-3 block">Experta en Cuidado de la Piel</span>
-                <h3 className="text-3xl md:text-4xl font-serif mb-6">Elena Woods</h3>
-                <p className="text-white/60 mb-8 leading-relaxed">
-                  Reconocida por su delicadeza y precisión, Elena se especializa en tratamientos faciales y corporales que utilizan ingredientes naturales de la más alta calidad para nutrir y revitalizar la piel desde el interior, logrando un resplandor duradero.
-                </p>
-                <div className="flex gap-4">
-                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Facialismo</span>
-                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Piel</span>
-                </div>
+                <img src="/therapist-elena.png" alt="Vicky - Terapeuta" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
