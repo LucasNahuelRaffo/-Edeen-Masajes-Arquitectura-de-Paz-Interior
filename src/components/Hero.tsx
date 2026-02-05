@@ -54,7 +54,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-end justify-center overflow-hidden pb-10">
+    <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-10">
       {/* Content */}
       <div className="relative z-20 container mx-auto px-6 text-center mb-6">
         <div
