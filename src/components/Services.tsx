@@ -71,26 +71,24 @@ export function Services() {
         }
       );
 
-      // Cards staggered 3D reveal
+      // Cards staggered reveal
       gsap.fromTo('.service-card',
         {
           y: 60,
           opacity: 0,
-          rotationX: -10,
-          transformPerspective: 1000
+          scale: 0.95
         },
         {
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 60%",
-            invalidateOnRefresh: true
+            start: "top 70%",
           },
           y: 0,
           opacity: 1,
-          rotationX: 0,
-          stagger: 0.15,
-          duration: 1,
-          ease: "power3.out"
+          scale: 1,
+          stagger: 0.2,
+          duration: 0.8,
+          ease: "power2.out"
         }
       );
     }, containerRef);
@@ -118,7 +116,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" style={{ perspective: '1000px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) =>
             <ServiceCard
               key={index}
