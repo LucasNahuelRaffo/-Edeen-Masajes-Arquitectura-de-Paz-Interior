@@ -154,7 +154,9 @@ export function Contact() {
 
             <div className="mt-10 flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/edeen_masajes/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-white/5 hover:bg-amber-400/20 rounded-full transition-colors text-white border border-white/10">
                 <Instagram size={24} />
               </a>

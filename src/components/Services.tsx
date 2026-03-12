@@ -71,25 +71,6 @@ export function Services() {
         }
       );
 
-      // Cards staggered reveal
-      gsap.fromTo('.service-card',
-        {
-          y: 60,
-          opacity: 0,
-        },
-        {
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 60%",
-            invalidateOnRefresh: true
-          },
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          duration: 0.8,
-          ease: "power2.out"
-        }
-      );
     }, containerRef);
 
     return () => ctx.revert();
@@ -120,6 +101,7 @@ export function Services() {
             <ServiceCard
               key={index}
               {...service}
+              index={index}
               onClick={() => setSelectedService(service)}
             />
           )}

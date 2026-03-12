@@ -1,4 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface ServiceCardProps {
   title: string;
@@ -7,6 +8,7 @@ interface ServiceCardProps {
   duration: string;
   icon: LucideIcon;
   onClick?: () => void;
+  index?: number;
 }
 
 export function ServiceCard({
@@ -15,10 +17,15 @@ export function ServiceCard({
   price,
   duration,
   icon: Icon,
-  onClick
+  onClick,
+  index = 0
 }: ServiceCardProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
       onClick={onClick}
       className="service-card group relative bg-white/5 backdrop-blur-md rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/10 overflow-hidden cursor-pointer active:scale-95">
 
@@ -45,6 +52,6 @@ export function ServiceCard({
           <span className="text-lg font-bold text-amber-300">{price}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

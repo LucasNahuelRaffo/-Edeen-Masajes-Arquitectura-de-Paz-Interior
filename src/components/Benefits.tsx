@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from 'react';
 import { Leaf, Heart, ShieldCheck, Clock } from 'lucide-react';
 import gsap from 'gsap';
+import benefitsImg from '../img/maderoterapia.jpeg';
 
 const benefits = [
   {
@@ -101,8 +102,9 @@ export function Benefits() {
                 className="relative rounded-[40%_60%_70%_30%/40%_50%_60%_50%] overflow-hidden shadow-2xl border border-white/20 animate-blob"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop"
+                  src={benefitsImg}
                   alt="Relaxing spa detail"
+                  loading="lazy"
                   className="w-full h-full object-cover aspect-square" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>

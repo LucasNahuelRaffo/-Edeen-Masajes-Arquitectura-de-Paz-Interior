@@ -186,6 +186,7 @@ export function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
                             ref={videoRef}
                             loop
                             playsInline
+                            preload="none"
                             className="w-full h-full object-cover"
                         >
                             <source src="/Video-Masajes.mp4" type="video/mp4" />
