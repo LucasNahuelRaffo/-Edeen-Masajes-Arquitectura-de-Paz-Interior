@@ -1,6 +1,9 @@
 import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,9 +68,8 @@ export function Hero() {
             Bienestar Natural
           </span>
 
-          <h1 className="hero-text-item text-5xl md:text-7xl font-serif text-white mb-6 leading-tight drop-shadow-lg">
-            Reconecta con <br />
-            <span className="italic text-amber-300">tu bienestar</span>
+          <h1 className="hero-text-item text-4xl md:text-6xl font-serif text-white mb-6 leading-tight drop-shadow-lg">
+            Reconecta con tu bienestar <span className="italic text-amber-300">en Vicente López</span>
           </h1>
 
           <p className="hero-text-item text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">

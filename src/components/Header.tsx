@@ -42,7 +42,7 @@ export function Header() {
               src="/edeen-logo-official.png"
               alt="Edeen Masajes Official Logo"
               loading="lazy"
-              className={`w-full h-auto object-contain transition-all duration-300 ${isScrolled ? 'w-24' : 'w-32'} ${isScrolled ? 'brightness-0' : 'brightness-0 invert'}`}
+              className={`w-full h-auto object-contain transition-all duration-300 ${isScrolled ? 'w-24' : 'w-32'}`}
             />
           </div>
         </a>

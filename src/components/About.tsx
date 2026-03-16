@@ -15,45 +15,46 @@ type GalleryItem = {
 };
 
 import silviaImg from '../img/silvia.jpeg';
-import maderoterapiaImg from '../img/maderoterapia.jpeg';
+import cremasImg from '../img/Imagen_Cremas.jpeg';
 import sopapasImg from '../img/sopapas.jpeg';
 import maderoterapia2Img from '../img/maderoteparia2.jpeg';
 import piedracalienteImg from '../img/piedracaliente.jpeg';
 import piedrascalientesImg from '../img/piedrascalientes.jpeg';
+import limpiezaFacialImg from '../img/imagen_limpieza_facial.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const galleryItems: GalleryItem[] = [
   {
-    id: 'santuario',
-    img: '/room-main.png',
-    alt: 'Santuario Principal',
-    title: 'Santuario Principal',
-    subtitle: 'El corazón de Edeen',
-    description: 'Nuestro espacio principal fue diseñado con materiales nobles, luz tenue y una acústica cuidada para favorecer la desconexión total. Cada detalle — desde las telas hasta los aromas — está elegido para guiar al cuerpo hacia un estado de calma profunda.',
-    tags: ['Privacidad total', 'Iluminación controlada', 'Acústica zen'],
+    id: 'limpieza-facial-1',
+    img: limpiezaFacialImg,
+    alt: 'Limpieza Facial',
+    title: 'Limpieza Facial Profunda',
+    subtitle: 'Renovación y frescura',
+    description: 'Tratamiento diseñado para limpiar a profundidad, equilibrar y devolver la luminosidad natural al rostro utilizando productos biocompatibles de alta calidad que respetan tu piel.',
+    tags: ['Cuidado Facial', 'Luminosidad', 'Biocosmética'],
   },
   {
     id: 'biocosmetica',
-    img: '',
-    alt: 'La Biocosmética',
-    title: 'La Biocosmética & Maderoterapia',
-    subtitle: 'Técnica ancestral renovada',
-    description: 'La maderoterapia utiliza instrumentos de madera de alta calidad para moldear el cuerpo, activar la circulación y drenar toxinas. Combinada con aceites biocompatibles, esta técnica redefine los contornos y libera la tensión acumulada en tejidos profundos.',
-    tags: ['Drenaje linfático', 'Moldeo corporal', 'Aceites orgánicos'],
+    img: cremasImg,
+    alt: 'Biocosmética Premium',
+    title: 'Biocosmética & Activos Puros',
+    subtitle: 'Nutrición celular profunda',
+    description: 'Trabajamos con líneas de biocosmética de alta gama que fusionan la ciencia con la naturaleza. Cada producto es seleccionado por sus activos biocompatibles que penetran en las capas profundas de la piel, garantizando una nutrición real y resultados visibles desde la primera sesión.',
+    tags: ['Activos Naturales', 'Nutrición Cutánea', 'Ciencia & Naturaleza'],
   },
   {
     id: 'bienvenida',
-    img: '',
+    img: sopapasImg,
     alt: 'Bienvenida Atenta',
     title: 'Bienvenida & Sopapas',
     subtitle: 'Calor que sana desde el primer contacto',
-    description: 'Nuestra bienvenida incluye la aplicación de sopapas, ventosas de silicona que generan vacío sobre la piel para liberar tensiones superficiales, mejorar la microcirculación y preparar el cuerpo para recibir el tratamiento principal con mayor profundidad.',
+    description: 'Nuestra bienvenida incluye la aplicación de sopapas, ventosas de plastico que generan vacío sobre la piel para liberar tensiones superficiales, mejorar la microcirculación y preparar el cuerpo para recibir el tratamiento principal con mayor profundidad.',
     tags: ['Ventosaterapia', 'Descontracturante', 'Preparación corporal'],
   },
   {
     id: 'rincon',
-    img: '',
+    img: maderoterapia2Img,
     alt: 'Rincón de calma',
     title: 'Rincón de Calma',
     subtitle: 'Donde el tiempo se detiene',
@@ -62,7 +63,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 'oleos',
-    img: '',
+    img: piedracalienteImg,
     alt: 'Óleos Terapéuticos',
     title: 'Óleos & Piedra Caliente',
     subtitle: 'Calor profundo con aceites puros',
@@ -71,7 +72,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 'piedras',
-    img: '',
+    img: piedrascalientesImg,
     alt: 'Piedras Calientes',
     title: 'Masaje con Piedras Calientes',
     subtitle: 'Equilibrio entre fuego y piedra',
@@ -205,7 +206,7 @@ export function About() {
                 playsInline
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               >
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4" />
+                <source src="/Video-Masajes.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-black/20" />
             </div>
@@ -246,17 +247,17 @@ export function About() {
             {/* Therapist 1 - Silvia */}
             <div className="therapist-card grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               <div className="rounded-[2.5rem] overflow-hidden aspect-square border border-white/10 shadow-2xl order-1">
-                <img src={silviaImg} alt="Silvia - Directora" loading="lazy" className="w-full h-full object-cover" />
+                <img src={silviaImg} alt="Silvia, terapeuta senior y fundadora de Edeen Masajes en Vicente López" loading="lazy" className="w-full h-full object-cover" />
               </div>
               <div className="bg-white/5 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] border border-white/10 order-2">
-                <span className="text-amber-400 text-xs tracking-widest uppercase mb-3 block">Directora & Profesional Senior</span>
-                <h3 className="text-3xl md:text-4xl font-serif mb-6">Silvia</h3>
-                <p className="text-white/60 mb-8 leading-relaxed">
-                  Como alma y fundadora de Edeen, Silvia lidera el centro con una maestría forjada en años de práctica y estudio de las artes curativas. Su enfoque combina la precisión técnica con una sensibilidad intuitiva que permite una sanación profunda y personalizada para cada alma que cruza nuestra puerta.
+                <span className="text-amber-400 text-xs tracking-widest uppercase mb-3 block text-center lg:text-left">Directora & Profesional Senior</span>
+                <h3 className="text-3xl md:text-5xl font-serif mb-6 text-center lg:text-left">Silvia</h3>
+                <p className="text-white/70 mb-8 leading-relaxed text-center lg:text-left text-sm md:text-base">
+                  Como alma y fundadora de Edeen, Silvia lidera el centro con una maestría forjada en años de práctica y estudio de las artes curativas. Su enfoque comienza con una precisión técnica con una sensibilidad intuitiva que permite una sanación profunda y personalizada para cada alma que cruza nuestra puerta.
                 </p>
-                <div className="flex gap-4">
-                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Maestría Holística</span>
-                  <span className="px-4 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40">Liderazgo Re-Evolutivo</span>
+                <div className="flex gap-4 justify-center lg:justify-start">
+                  <span className="px-5 py-2 rounded-full border border-white/10 text-[10px] uppercase text-white/50 tracking-widest">Maestría Holística</span>
+                  <span className="px-5 py-2 rounded-full border border-white/10 text-[10px] uppercase text-white/50 tracking-widest">Liderazgo Re-Evolutivo</span>
                 </div>
               </div>
             </div>
@@ -267,105 +268,75 @@ export function About() {
       {/* 4. El Escenario del Silencio (Gallery) */}
       <section className="gallery-section py-32 px-6">
         <div className="container mx-auto">
-          <h2 className="text-4xl md:text-6xl font-serif text-center mb-4">El Escenario del Silencio</h2>
+          <h2 className="text-4xl md:text-6xl font-serif text-center mb-4">El Escenario del Silencio <span className="text-2xl md:text-4xl block md:inline opacity-50">en Vicente López</span></h2>
           <p className="text-amber-500/60 text-center mb-20 text-sm tracking-widest">Un recorrido visual por nuestras instalaciones</p>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px] md:auto-rows-[300px]">
-            {/* Tall Item */}
-            <div
-              onClick={() => setSelectedItem(galleryItems[0])}
-              className="gallery-item md:col-span-8 md:row-span-2 relative group rounded-[2rem] overflow-hidden border border-white/10 cursor-pointer">
-              <img src="/room-main.png" alt="Santuario Principal" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
-                <h4 className="text-2xl font-serif mb-2">Santuario Principal</h4>
-                <p className="text-white/60 text-sm">El centro neurálgico de la paz, diseñado con materiales nobles y luz tenue para una desconexión total.</p>
-              </div>
-            </div>
-
-            {/* Square Item */}
-            <div
-              onClick={() => setSelectedItem({ ...galleryItems[1], img: maderoterapiaImg })}
-              className="gallery-item md:col-span-4 md:row-span-1 relative group rounded-[2rem] overflow-hidden border border-white/10 cursor-pointer">
-              <img src={maderoterapiaImg} alt="La Biocosmética" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white border border-white/40 px-6 py-2 rounded-full text-xs uppercase tracking-widest">La Biocosmética</span>
-              </div>
-            </div>
-
-            {/* Small Item */}
-            <div
-              onClick={() => setSelectedItem({ ...galleryItems[2], img: sopapasImg })}
-              className="gallery-item md:col-span-4 md:row-span-1 relative group rounded-[2rem] overflow-hidden border border-white/10 cursor-pointer">
-              <img src={sopapasImg} alt="Bienvenida Atenta" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white border border-white/40 px-6 py-2 rounded-full text-xs uppercase tracking-widest">Bienvenida</span>
-              </div>
-            </div>
-
-            {/* Bottom Row Items */}
-            <div
-              onClick={() => setSelectedItem({ ...galleryItems[3], img: maderoterapia2Img })}
-              className="gallery-item md:col-span-4 md:row-span-1 border border-white/10 rounded-[2rem] overflow-hidden relative group cursor-pointer">
-              <img src={maderoterapia2Img} alt="Rincón de calma" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white border border-white/40 px-6 py-2 rounded-full text-xs uppercase tracking-widest">Rincón de calma</span>
-              </div>
-            </div>
-            <div
-              onClick={() => setSelectedItem({ ...galleryItems[4], img: piedracalienteImg })}
-              className="gallery-item md:col-span-4 md:row-span-1 border border-white/10 rounded-[2rem] overflow-hidden relative group cursor-pointer">
-              <img src={piedracalienteImg} alt="Óleos" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white border border-white/40 px-6 py-2 rounded-full text-xs uppercase tracking-widest">Óleos</span>
-              </div>
-            </div>
-            <div
-              onClick={() => setSelectedItem({ ...galleryItems[5], img: piedrascalientesImg })}
-              className="gallery-item md:col-span-4 md:row-span-1 border border-white/10 rounded-[2rem] overflow-hidden relative group cursor-pointer">
-              <img src={piedrascalientesImg} alt="Piedras" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-white border border-white/40 px-6 py-2 rounded-full text-xs uppercase tracking-widest">Piedras calientes</span>
-              </div>
-            </div>
+            {galleryItems.map((item, idx) => {
+              // Defining column and row spans for complex grid
+              const layout = [
+                "md:col-span-4 md:row-span-1", // Facial 1
+                "md:col-span-4 md:row-span-1", // Biocosmética
+                "md:col-span-4 md:row-span-1", // Sopapas
+                "md:col-span-4 md:row-span-1", // Rincón
+                "md:col-span-4 md:row-span-1", // Óleos
+                "md:col-span-4 md:row-span-1", // Piedras
+              ];
+              
+              return (
+                <div
+                  key={item.id}
+                  onClick={() => setSelectedItem(item)}
+                  className={`gallery-item ${layout[idx]} relative group rounded-[2rem] overflow-hidden border border-white/10 cursor-pointer`}>
+                  <img src={item.img} alt={`${item.title} - ${item.subtitle} en Edeen Masajes Vicente López`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
+                    <h4 className="text-2xl font-serif mb-2">{item.title}</h4>
+                    <p className="text-white/60 text-sm">{item.subtitle}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           {/* Gallery Info Panel */}
           {selectedItem && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12 pt-20 md:pt-24"
+              className="fixed inset-0 z-50 flex items-center justify-center p-6 md:p-12 pt-32"
               onClick={handleClose}
               style={{ transition: 'opacity 0.3s ease', opacity: isAnimating ? 1 : 0 }}>
               <div
-                className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+                className="absolute inset-0 bg-black/80 backdrop-blur-md"
                 style={{ transition: 'opacity 0.3s ease', opacity: isAnimating ? 1 : 0 }} />
               <div
-                className="relative z-10 bg-[#0f0a07] border border-white/10 rounded-[2.5rem] overflow-hidden max-w-2xl w-full shadow-2xl grid grid-cols-1 md:grid-cols-2"
+                className="relative z-10 bg-[#0f0a07] border border-white/10 rounded-[2.5rem] overflow-hidden max-w-xl w-full shadow-2xl"
                 onClick={e => e.stopPropagation()}
                 style={{
                   transition: 'opacity 0.35s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1)',
                   opacity: isAnimating ? 1 : 0,
-                  transform: isAnimating ? 'translateY(0) scale(1)' : 'translateY(32px) scale(0.97)',
+                  transform: isAnimating ? 'translateY(60px) scale(1)' : 'translateY(92px) scale(0.97)',
                 }}>
-                {/* Image */}
-                <div className="relative aspect-square md:aspect-auto md:min-h-[340px]">
-                  <img src={selectedItem.img} alt={selectedItem.alt} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0f0a07]/60 hidden md:block" />
-                </div>
-                {/* Info */}
-                <div className="p-7 md:p-10 flex flex-col justify-center">
-                  <button
-                    onClick={handleClose}
-                    className="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white/70 hover:bg-white/20 hover:text-white hover:border-white/50 transition-all duration-200 hover:scale-110">
-                    <X size={18} />
-                  </button>
-                  <span className="text-amber-500/70 text-[10px] uppercase tracking-[0.4em] font-bold mb-3 block">{selectedItem.subtitle}</span>
-                  <h3 className="text-2xl md:text-3xl font-serif mb-5 leading-snug">{selectedItem.title}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed mb-8">{selectedItem.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedItem.tags.map(tag => (
-                      <span key={tag} className="px-3 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40 tracking-wider">{tag}</span>
-                    ))}
+                <button
+                  onClick={handleClose}
+                  className="absolute top-6 right-6 z-50 w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white/70 hover:bg-white/20 hover:text-white hover:border-white/50 transition-all duration-200 hover:scale-110">
+                  <X size={18} />
+                </button>
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  {/* Image */}
+                  <div className="relative aspect-square md:aspect-auto md:min-h-[340px]">
+                    <img src={selectedItem.img} alt={selectedItem.alt} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0f0a07]/60 hidden md:block" />
+                  </div>
+                  {/* Info */}
+                  <div className="p-8 md:p-10 pt-16 md:pt-16 flex flex-col justify-center">
+                    <span className="text-amber-500/70 text-[10px] uppercase tracking-[0.4em] font-bold mb-3 block">{selectedItem.subtitle}</span>
+                    <h3 className="text-xl md:text-2xl font-serif mb-4 leading-snug">{selectedItem.title}</h3>
+                    <p className="text-white/60 text-[13px] leading-relaxed mb-6">{selectedItem.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedItem.tags.map(tag => (
+                        <span key={tag} className="px-3 py-1 rounded-full border border-white/10 text-[10px] uppercase text-white/40 tracking-wider">{tag}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

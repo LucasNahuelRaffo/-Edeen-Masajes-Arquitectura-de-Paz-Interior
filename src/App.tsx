@@ -11,6 +11,7 @@ import { FloatingParticles } from './components/ui/FloatingParticles';
 import { SmoothScroll } from './components/ui/SmoothScroll';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { motion } from 'framer-motion';
+import { LocalBusinessSchema } from './components/seo/LocalBusinessSchema';
 
 import bgFallbackImg from './img/piedrascalientes.jpeg';
 
@@ -18,6 +19,7 @@ export function App() {
   return (
     <SmoothScroll>
       <CustomCursor />
+      <LocalBusinessSchema />
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -47,7 +49,7 @@ export function App() {
             {/* Fallback image if video fails */}
             <img
               src={bgFallbackImg}
-              alt="Spa Background"
+              alt="Ambiente relajante en Edeen Masajes Vicente López - Piedras Calientes"
               className="w-full h-full object-cover" 
             />
           </motion.video>

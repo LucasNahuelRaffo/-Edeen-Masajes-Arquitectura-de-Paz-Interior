@@ -1,6 +1,9 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import { MapPin, Phone, Clock, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Phone, Clock, Instagram } from 'lucide-react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const PAIN_OPTIONS = [
   'Cervical', 'Cuello', 'Hombros', 'Espalda Alta',
@@ -159,11 +162,6 @@ export function Contact() {
                 rel="noopener noreferrer"
                 className="p-3 bg-white/5 hover:bg-amber-400/20 rounded-full transition-colors text-white border border-white/10">
                 <Instagram size={24} />
-              </a>
-              <a
-                href="#"
-                className="p-3 bg-white/5 hover:bg-amber-400/20 rounded-full transition-colors text-white border border-white/10">
-                <Facebook size={24} />
               </a>
             </div>
           </div>

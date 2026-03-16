@@ -1,56 +1,96 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { Star, Play, Pause, Mic } from 'lucide-react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+import audioAna from '../img/audios/Audio-1.ogg';
+import audioCarlos from '../img/audios/Audio_2_testimonio.mpeg';
+import audioYamila from '../img/audios/audio_testimonio_yamila.ogg';
 
 const testimonials = [
   {
-    name: 'Ana García',
-    duration: '0:14',
-    audioUrl: '/Audio-1.ogg',
+    id: 'juan',
+    name: 'Juan Pérez',
+    audioUrl: audioCarlos,
     date: 'Hoy',
     rating: 5
   },
   {
-    name: 'Carlos Méndez',
-    duration: '1:12',
-    date: 'Ayer',
+    id: 'yamila',
+    name: 'Yamila',
+    audioUrl: audioYamila,
+    date: 'Hoy',
     rating: 5
   },
   {
-    name: 'Sofía Torres',
-    duration: '0:58',
-    date: 'Hace 2 días',
+    id: 'diego',
+    name: 'Diego Ruiz',
+    audioUrl: audioAna,
+    date: 'Ayer',
     rating: 5
   }
 ];
 
-function VoiceNoteCard({ testimonial, index }: { testimonial: typeof testimonials[0], index: number }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
+function formatTime(seconds: number) {
+  if (isNaN(seconds)) return '0:00';
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+type VoiceNoteProps = {
+  testimonial: (typeof testimonials)[0];
+  index: number;
+  activeId: string | null;
+  onPlay: (id: string) => void;
+  onPause: () => void;
+};
+
+function VoiceNoteCard({ testimonial, index, activeId, onPlay, onPause }: VoiceNoteProps) {
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const isPlaying = activeId === testimonial.id;
+
+  useEffect(() => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.play().catch(() => onPause());
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying, onPause]);
 
   const togglePlay = () => {
-    if (!audioRef.current) return;
-
     if (isPlaying) {
-      audioRef.current.pause();
+      onPause();
     } else {
-      audioRef.current.play();
+      onPlay(testimonial.id);
     }
-    setIsPlaying(!isPlaying);
   };
 
   const handleTimeUpdate = () => {
     if (audioRef.current) {
-      const currentProgress = (audioRef.current.currentTime / audioRef.current.duration) * 100;
-      setProgress(currentProgress);
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
+
+  const handleLoadedMetadata = () => {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
     }
   };
 
   const handleEnded = () => {
-    setIsPlaying(false);
-    setProgress(0);
+    onPause();
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+    }
   };
+
+  const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+  const remainingTime = duration > 0 ? duration - currentTime : 0;
 
   return (
     <div
@@ -61,6 +101,7 @@ function VoiceNoteCard({ testimonial, index }: { testimonial: typeof testimonial
           ref={audioRef}
           src={testimonial.audioUrl}
           onTimeUpdate={handleTimeUpdate}
+          onLoadedMetadata={handleLoadedMetadata}
           onEnded={handleEnded}
         />
       )}
@@ -91,7 +132,7 @@ function VoiceNoteCard({ testimonial, index }: { testimonial: typeof testimonial
               <Mic size={12} />
               <span>Enviado a Silvia</span>
             </div>
-            <span>{testimonial.duration}</span>
+            <span>{formatTime(remainingTime)}</span>
           </div>
           <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden relative">
             <div
@@ -123,6 +164,7 @@ function VoiceNoteCard({ testimonial, index }: { testimonial: typeof testimonial
 
 export function Testimonials() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [activeAudioId, setActiveAudioId] = useState<string | null>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -134,14 +176,18 @@ export function Testimonials() {
         {
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 80%",
-            invalidateOnRefresh: true
+            start: "top 85%",
+            toggleActions: "play none none none",
+            once: true
           },
           y: 0,
           opacity: 1,
-          stagger: 0.2,
-          duration: 1,
-          ease: "power3.out"
+          stagger: {
+            amount: 0.4,
+            from: "start"
+          },
+          duration: 1.2,
+          ease: "expo.out"
         }
       );
     }, containerRef);
@@ -172,7 +218,14 @@ export function Testimonials() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {testimonials.map((t, i) =>
-            <VoiceNoteCard key={i} testimonial={t} index={i} />
+            <VoiceNoteCard 
+              key={t.id} 
+              testimonial={t} 
+              index={i} 
+              activeId={activeAudioId}
+              onPlay={(id) => setActiveAudioId(id)}
+              onPause={() => setActiveAudioId(null)}
+            />
           )}
         </div>
       </div>

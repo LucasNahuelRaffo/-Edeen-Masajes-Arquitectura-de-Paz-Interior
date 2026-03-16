@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import type { LucideIcon } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -9,19 +10,21 @@ interface ServiceCardProps {
   onClick?: () => void;
 }
 
-export function ServiceCard({
+export const ServiceCard = forwardRef<HTMLDivElement, ServiceCardProps>(function ServiceCard({
   title,
   description,
   price,
   duration,
   icon: Icon,
   onClick
-}: ServiceCardProps) {
+}, ref) {
   return (
     <div
+      ref={ref}
       onClick={onClick}
-      className="service-card group relative bg-white/5 backdrop-blur-md rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/10 overflow-hidden cursor-pointer active:scale-95">
-
+      className="group relative bg-white/5 backdrop-blur-md rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/10 overflow-hidden cursor-pointer active:scale-95"
+      style={{ opacity: 0 }}
+    >
       {/* Hover Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
@@ -47,4 +50,4 @@ export function ServiceCard({
       </div>
     </div>
   );
-}
+});
