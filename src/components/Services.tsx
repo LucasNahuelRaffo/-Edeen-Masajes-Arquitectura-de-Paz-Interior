@@ -36,8 +36,8 @@ const services = [
       'Reflexología',
       'Hidratación Corporal'
     ],
-    price: '$80.000',
-    duration: 'Sesión Única',
+    price: '$60.000',
+    duration: '60 Minutos',
     icon: Wind
   }
 ] as const;
