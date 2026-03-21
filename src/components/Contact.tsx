@@ -119,7 +119,9 @@ export function Contact() {
                     Ubicación
                   </h3>
                   <p className="text-white/60">
-                    Sede Central Edeen
+                    Gral. José de San Martín 3468
+                    <br />
+                    Florida Oeste, Vicente López
                     <br />
                     Buenos Aires, Argentina
                   </p>
