@@ -6,7 +6,7 @@ export function LocalBusinessSchema() {
     "image": "https://www.edeenmasajes.com/og-image.jpg",
     "@id": "https://www.edeenmasajes.com",
     "url": "https://www.edeenmasajes.com",
-    "telephone": "+5491164647433",
+    "telephone": "+5491134115625",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Gral. José de San Martín 3468",

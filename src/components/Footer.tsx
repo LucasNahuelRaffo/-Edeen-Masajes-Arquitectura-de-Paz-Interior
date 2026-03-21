@@ -24,8 +24,8 @@ export function Footer() {
         <address className="not-italic text-cream-100/30 text-xs leading-relaxed mb-4">
           Gral. José de San Martín 3468, Florida Oeste, Buenos Aires, Argentina
           <br />
-          <a href="https://wa.me/5491164647433" className="hover:text-cream-50 transition-colors">
-            +54 9 11 6464-7433
+          <a href="https://wa.me/5491134115625" className="hover:text-cream-50 transition-colors">
+            +54 9 11 3411-5625
           </a>
         </address>
 

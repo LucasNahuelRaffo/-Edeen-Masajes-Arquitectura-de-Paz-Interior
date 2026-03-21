@@ -412,7 +412,7 @@ export function About() {
               Tratamientos personalizados, masajes descontracturantes, piedras calientes y mucho más. Tu experiencia de bienestar comienza aquí.
             </p>
             <a
-              href={`https://wa.me/5491164647433?text=${encodeURIComponent("Hola Silvia! Me gustaría reservar una cita. ¿Qué turnos tenés disponibles?")}`}
+              href={`https://wa.me/5491134115625?text=${encodeURIComponent("Hola Silvia! Me gustaría reservar una cita. ¿Qué turnos tenés disponibles?")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex px-12 py-5 bg-amber-400 text-brown-900 rounded-full font-bold uppercase tracking-widest hover:bg-amber-300 transition-all hover:scale-105 hover:shadow-2xl shadow-amber-400/20"

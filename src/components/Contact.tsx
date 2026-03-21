@@ -90,7 +90,7 @@ export function Contact() {
     e.preventDefault();
     const message = `Hola Silvia! Mi nombre es ${formData.name}. Me comunico desde la web porque tengo dolor en: ${formData.selectedPain || 'No especificado'}. ${formData.message ? `\nMensaje adicional: ${formData.message}` : ''}`;
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/5491164647433?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/5491134115625?text=${encodedMessage}`, '_blank');
   };
 
   return (
@@ -136,7 +136,7 @@ export function Contact() {
                   <h3 className="font-serif text-xl mb-1 text-white">
                     WhatsApp
                   </h3>
-                  <p className="text-white/60">11 6464-7433</p>
+                  <p className="text-white/60">11 3411-5625</p>
                 </div>
               </div>
 

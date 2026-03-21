@@ -164,7 +164,7 @@ export function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
 
                         <div className="mt-auto pt-6 pb-2">
                             <a
-                                href={`https://wa.me/5491164647433?text=${encodeURIComponent(
+                                href={`https://wa.me/5491134115625?text=${encodeURIComponent(
                                     `Hola Silvia! Me interesa ${service.type === 'membership' ? `la Membresía Mensual de: ${service.price}` : `un Turno Individual de: ${service.price}`}. Me gustaría recibir más información.`
                                 )}`}
                                 target="_blank"
