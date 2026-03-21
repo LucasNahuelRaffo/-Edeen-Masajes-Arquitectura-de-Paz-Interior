@@ -28,16 +28,11 @@ export function LocalBusinessSchema() {
           "Tuesday",
           "Wednesday",
           "Thursday",
-          "Friday"
+          "Friday",
+          "Saturday"
         ],
         "opens": "09:00",
         "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday"],
-        "opens": "10:00",
-        "closes": "18:00"
       }
     ],
     "hasOfferCatalog": {

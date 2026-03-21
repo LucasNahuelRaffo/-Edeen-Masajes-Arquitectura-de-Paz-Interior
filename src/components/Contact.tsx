@@ -149,9 +149,7 @@ export function Contact() {
                     Horario
                   </h3>
                   <p className="text-white/60">
-                    Lun - Vie: 9:00 AM - 8:00 PM
-                    <br />
-                    Sáb: 10:00 AM - 6:00 PM
+                    Lun - Sáb: 9:00 AM - 8:00 PM
                   </p>
                 </div>
               </div>
