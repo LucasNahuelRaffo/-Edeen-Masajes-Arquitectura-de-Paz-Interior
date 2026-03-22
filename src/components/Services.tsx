@@ -25,20 +25,49 @@ const services = [
   },
   {
     type: 'individual',
-    title: 'Turno Individual',
-    description: 'Elegí el momento y el tratamiento que mejor se adapte a tu necesidad de hoy.',
-    longDescription: 'Ideal para quienes buscan un alivio puntual o quieren probar nuestra experiencia Edeen. Podés elegir cualquiera de nuestros tratamientos especializados.',
+    title: 'Masaje Exprés',
+    description: 'Un alivio rápido y efectivo para renovar tu energía en el día.',
+    longDescription: 'Ideal para quienes tienen poco tiempo pero necesitan liberar tensiones puntuales. Elegí entre nuestros diferentes enfoques terapéuticos para aprovechar cada minuto.',
     treatments: [
       'Masajes Relajantes',
       'Descontracturantes',
+      'Masaje de Cuello y Espalda'
+    ],
+    price: '$35.000',
+    duration: '30 Minutos',
+    icon: Wind
+  },
+  {
+    type: 'individual',
+    title: 'Masaje Clásico',
+    description: 'El tiempo perfecto para desconectar y tratar tensiones medias.',
+    longDescription: 'Nuestra sesión estándar permite trabajar el cuerpo entero o enfocarse profundamente en áreas específicas de mayor tensión muscular y bloqueo energético.',
+    treatments: [
+      'Masajes Relajantes',
+      'Descontracturantes',
+      'Piedras Calientes',
+      'Aromaterapia'
+    ],
+    price: '$48.000',
+    duration: '50 Minutos',
+    icon: Wind
+  },
+  {
+    type: 'individual',
+    title: 'Masaje Premium',
+    description: 'Una experiencia inmersiva de relajación profunda y restauración total.',
+    longDescription: 'El tratamiento más completo. Combina diferentes técnicas terapéuticas, permitiendo al cuerpo entrar en un estado profundo de relajación y sanación celular.',
+    treatments: [
+      'Masajes Relajantes',
+      'Descontracturantes Profundos',
       'Piedras Calientes',
       'Aromaterapia',
       'Reflexología',
       'Hidratación Corporal'
     ],
-    price: '$60.000',
-    duration: '60 Minutos',
-    icon: Wind
+    price: '$70.000',
+    duration: '100 Minutos',
+    icon: Sparkles
   }
 ] as const;
 
