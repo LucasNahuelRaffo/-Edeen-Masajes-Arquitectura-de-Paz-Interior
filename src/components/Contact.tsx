@@ -136,7 +136,7 @@ export function Contact() {
                   <h3 className="font-serif text-xl mb-1 text-white">
                     WhatsApp
                   </h3>
-                  <p className="text-white/60">11 3411-5625</p>
+                  <p className="text-white/60">+54 113411-5625</p>
                 </div>
               </div>
 

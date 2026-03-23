@@ -25,7 +25,7 @@ export function Footer() {
           Gral. José de San Martín 3468, Florida Oeste, Buenos Aires, Argentina
           <br />
           <a href="https://wa.me/5491134115625" className="hover:text-cream-50 transition-colors">
-            +54 9 11 3411-5625
+            +54 113411-5625
           </a>
         </address>
 
