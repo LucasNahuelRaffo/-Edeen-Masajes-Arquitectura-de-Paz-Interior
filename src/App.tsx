@@ -1,17 +1,19 @@
+import { lazy, Suspense } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Services } from './components/Services';
-import { Benefits } from './components/Benefits';
-import { Testimonials } from './components/Testimonials';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
-import { WhatsAppButton } from './components/WhatsAppButton';
 import { FloatingParticles } from './components/ui/FloatingParticles';
 import { SmoothScroll } from './components/ui/SmoothScroll';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { motion } from 'framer-motion';
 import { LocalBusinessSchema } from './components/seo/LocalBusinessSchema';
+
+const About = lazy(() => import('./components/About').then(m => ({ default: m.About })));
+const Services = lazy(() => import('./components/Services').then(m => ({ default: m.Services })));
+const Benefits = lazy(() => import('./components/Benefits').then(m => ({ default: m.Benefits })));
+const Testimonials = lazy(() => import('./components/Testimonials').then(m => ({ default: m.Testimonials })));
+const Contact = lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })));
+const Footer = lazy(() => import('./components/Footer').then(m => ({ default: m.Footer })));
+const WhatsAppButton = lazy(() => import('./components/WhatsAppButton').then(m => ({ default: m.WhatsAppButton })));
 
 import bgFallbackImg from './img/piedrascalientes.jpeg';
 
@@ -61,27 +63,33 @@ export function App() {
         <main className="relative z-10">
           <Hero />
 
-          <div id="sobre-nosotros">
-            <About />
-          </div>
+          <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
+            <div id="sobre-nosotros">
+              <About />
+            </div>
 
-          <div id="servicios">
-            <Services />
-          </div>
+            <div id="servicios">
+              <Services />
+            </div>
 
-          <Benefits />
+            <Benefits />
 
-          <Testimonials />
+            <Testimonials />
 
-          <div id="contacto">
-            <Contact />
-          </div>
+            <div id="contacto">
+              <Contact />
+            </div>
+          </Suspense>
         </main>
 
         <div className="relative z-10">
-          <Footer />
+          <Suspense fallback={null}>
+            <Footer />
+          </Suspense>
         </div>
-        <WhatsAppButton />
+        <Suspense fallback={null}>
+          <WhatsAppButton />
+        </Suspense>
       </motion.div>
     </SmoothScroll>
   );

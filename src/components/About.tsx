@@ -288,7 +288,7 @@ export function About() {
                   key={item.id}
                   onClick={() => setSelectedItem(item)}
                   className={`gallery-item ${layout[idx]} relative group rounded-[2rem] overflow-hidden border border-white/10 cursor-pointer`}>
-                  <img src={item.img} alt={`${item.title} - ${item.subtitle} en Edeen Masajes Vicente López`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img loading="lazy" src={item.img} alt={`${item.title} - ${item.subtitle} en Edeen Masajes Vicente López`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
                     <h4 className="text-2xl font-serif mb-2">{item.title}</h4>
@@ -324,7 +324,7 @@ export function About() {
                 <div className="grid grid-cols-1 md:grid-cols-2">
                   {/* Image */}
                   <div className="relative aspect-square md:aspect-auto md:min-h-[340px]">
-                    <img src={selectedItem.img} alt={selectedItem.alt} className="w-full h-full object-cover" />
+                    <img loading="lazy" src={selectedItem.img} alt={selectedItem.alt} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0f0a07]/60 hidden md:block" />
                   </div>
                   {/* Info */}
