@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { FloatingParticles } from './components/ui/FloatingParticles';
@@ -14,10 +14,27 @@ const Testimonials = lazy(() => import('./components/Testimonials').then(m => ({
 const Contact = lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })));
 const Footer = lazy(() => import('./components/Footer').then(m => ({ default: m.Footer })));
 const WhatsAppButton = lazy(() => import('./components/WhatsAppButton').then(m => ({ default: m.WhatsAppButton })));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy })));
+const DataDeletion = lazy(() => import('./components/DataDeletion').then(m => ({ default: m.DataDeletion })));
 
 import bgFallbackImg from './img/piedrascalientes.jpeg';
 
 export function App() {
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  const isPrivacyPolicy = currentPath === '/politica-de-privacidad';
+  const isDataDeletion = currentPath === '/eliminacion-de-datos';
+
   return (
     <SmoothScroll>
       <CustomCursor />
@@ -61,24 +78,31 @@ export function App() {
         <Header />
 
         <main className="relative z-10">
-          <Hero />
-
           <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
-            <div id="sobre-nosotros">
-              <About />
-            </div>
+            {isPrivacyPolicy ? (
+              <PrivacyPolicy />
+            ) : isDataDeletion ? (
+              <DataDeletion />
+            ) : (
+              <>
+                <Hero />
+                <div id="sobre-nosotros">
+                  <About />
+                </div>
 
-            <div id="servicios">
-              <Services />
-            </div>
+                <div id="servicios">
+                  <Services />
+                </div>
 
-            <Benefits />
+                <Benefits />
 
-            <Testimonials />
+                <Testimonials />
 
-            <div id="contacto">
-              <Contact />
-            </div>
+                <div id="contacto">
+                  <Contact />
+                </div>
+              </>
+            )}
           </Suspense>
         </main>
 

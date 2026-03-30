@@ -34,12 +34,28 @@ export function Footer() {
           reservados.
         </p>
         <div className="mt-2 flex justify-center gap-4">
-          <a href="#" className="hover:text-cream-50 transition-colors">
-            Aviso de Privacidad
+          <a 
+            href="/politica-de-privacidad" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.history.pushState({}, '', '/politica-de-privacidad');
+              window.dispatchEvent(new PopStateEvent('popstate'));
+            }}
+            className="hover:text-cream-50 transition-colors"
+          >
+            Política de Privacidad
           </a>
           <span>|</span>
-          <a href="#" className="hover:text-cream-50 transition-colors">
-            Términos y Condiciones
+          <a 
+            href="/eliminacion-de-datos" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.history.pushState({}, '', '/eliminacion-de-datos');
+              window.dispatchEvent(new PopStateEvent('popstate'));
+            }}
+            className="hover:text-cream-50 transition-colors"
+          >
+            Eliminación de Datos
           </a>
         </div>
       </motion.div>

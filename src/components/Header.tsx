@@ -36,7 +36,17 @@ export function Header() {
 
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="relative z-50 group flex items-center">
+        <a 
+          href="/" 
+          onClick={(e) => {
+            if (window.location.pathname !== '/') {
+              e.preventDefault();
+              window.history.pushState({}, '', '/');
+              window.dispatchEvent(new PopStateEvent('popstate'));
+            }
+          }}
+          className="relative z-50 group flex items-center"
+        >
           <div className={`transition-all duration-300 ${isScrolled ? 'w-24' : 'w-32'}`}>
             <img
               src="/edeen-logo-official.png"
