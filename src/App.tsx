@@ -32,8 +32,8 @@ export function App() {
     return () => window.removeEventListener('popstate', handleLocationChange);
   }, []);
 
-  const isPrivacyPolicy = currentPath === '/politica-de-privacidad';
-  const isDataDeletion = currentPath === '/eliminacion-de-datos';
+  const isPrivacyPolicy = currentPath === '/politica-de-privacidad' || currentPath === '/politica-de-privacidad/';
+  const isDataDeletion = currentPath === '/eliminacion-de-datos' || currentPath === '/eliminacion-de-datos/';
 
   return (
     <SmoothScroll>
