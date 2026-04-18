@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+import { MessageCircle } from 'lucide-react';
 import { trackLead } from '../utils/analytics';
 
 export function WhatsAppButton() {

@@ -427,11 +427,4 @@ export function About() {
 
     </div>
   );
-}    </a>
-          </div>
-        </div>
-      </section>
-
-    </div>
-  );
 }
