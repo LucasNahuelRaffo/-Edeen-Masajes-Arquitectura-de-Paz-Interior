@@ -1,12 +1,12 @@
-import React from 'react';
-import { MessageCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { trackLead } from '../utils/analytics';
+
 export function WhatsAppButton() {
   return (
     <motion.a
       href="https://wa.me/5491134115625?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20en%20Edeen%20Masajes"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackLead()}
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-sage-400 text-white shadow-lg hover:bg-sage-500 transition-colors duration-300"
       style={{
         borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' // Organic blob shape
@@ -40,5 +40,4 @@ export function WhatsAppButton() {
       <MessageCircle size={32} strokeWidth={2} />
       <span className="sr-only">Contactar por WhatsApp</span>
     </motion.a>);
-
 }

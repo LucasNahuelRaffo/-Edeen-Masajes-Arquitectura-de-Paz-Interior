@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { X, Clock, Calendar, Play, Sparkles, Wind } from 'lucide-react';
 import gsap from 'gsap';
+import { trackLead } from '../utils/analytics';
 
 interface ServiceModalProps {
     isOpen: boolean;
@@ -169,6 +170,7 @@ export function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
                                 )}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={() => trackLead()}
                                 className="w-full md:w-auto px-10 py-5 bg-amber-400 hover:bg-amber-300 text-black font-black rounded-2xl transition-all shadow-xl hover:shadow-amber-400/30 transform hover:-translate-y-1 flex items-center justify-center gap-3 active:scale-95 uppercase tracking-widest text-sm"
                             >
                                 <Calendar size={20} />

@@ -3,6 +3,7 @@ import { X } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Sparkles, Leaf, Coffee, Music, Zap } from 'lucide-react';
+import { trackLead } from '../utils/analytics';
 
 type GalleryItem = {
   id: string;
@@ -415,10 +416,18 @@ export function About() {
               href={`https://wa.me/5491134115625?text=${encodeURIComponent("Hola Silvia! Me gustaría reservar una cita. ¿Qué turnos tenés disponibles?")}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackLead()}
               className="inline-flex px-12 py-5 bg-amber-400 text-brown-900 rounded-full font-bold uppercase tracking-widest hover:bg-amber-300 transition-all hover:scale-105 hover:shadow-2xl shadow-amber-400/20"
             >
               Reservar Mi Cita
             </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}    </a>
           </div>
         </div>
       </section>

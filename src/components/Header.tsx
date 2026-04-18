@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { trackLead } from '../utils/analytics';
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -76,6 +78,7 @@ export function Header() {
             href={`https://wa.me/5491134115625?text=${encodeURIComponent("Hola Silvia! Me comunico desde la web, me gustaría solicitar un turno y recibir más información.")}`}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackLead()}
             className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 hover:shadow-lg ${isScrolled ? 'bg-amber-300 text-brown-900 hover:bg-amber-400' : 'bg-white text-brown-900 hover:bg-amber-100'}`}>
 
             Contacto
@@ -146,7 +149,10 @@ export function Header() {
                   href="https://wa.me/5491134115625"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    trackLead();
+                  }}
                   initial={{
                     opacity: 0,
                     y: 20
